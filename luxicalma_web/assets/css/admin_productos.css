@@ -1,0 +1,101 @@
+.admin-productos { padding: 36px 20px; }
+.admin-productos-cabecera { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 24px; }
+.admin-productos-cabecera h1 { margin-bottom: 6px; }
+.admin-productos-cabecera p:last-child { color: var(--tinta-suave); }
+.admin-form-producto, .admin-tabla-productos { padding: 22px; margin: 22px 0; border-radius: var(--radio-borde); background: var(--superficie); box-shadow: var(--sombra-suave); }
+.admin-form-producto h2, .admin-tabla-productos h2 { margin-bottom: 18px; }
+.admin-tabla-productos h2 span { font: 500 .8rem var(--fuente-principal); color: var(--tinta-suave); margin-left: 8px; }
+.admin-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.admin-form-grid label { display: flex; flex-direction: column; gap: 6px; font-size: .85rem; font-weight: 600; }
+.admin-form-grid input, .admin-form-grid select, .admin-form-grid textarea { width: 100%; padding: 11px 13px; border: 1px solid var(--arena); border-radius: 10px; background: #fff; color: var(--tinta); font: inherit; font-weight: 400; }
+.admin-form-grid textarea { resize: vertical; }
+.admin-form-grid small { color: var(--tinta-suave); font-size: .74rem; font-weight: 400; }
+.admin-categorias-producto { min-width: 0; padding: 0; border: 0; }
+.admin-categorias-producto legend { margin-bottom: 8px; font-size: .85rem; font-weight: 600; }
+.admin-categorias-producto legend small { margin-left: 6px; }
+.admin-categorias-opciones { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.admin-categorias-opciones label { display: inline-flex; flex-direction: row; align-items: center; gap: 6px; font-weight: 400; }
+.admin-categorias-opciones input { width: auto; }
+.admin-campo-ancho { grid-column: 1 / -1; }
+.admin-form-acciones { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.tabla-contenedor { width: 100%; overflow-x: auto; }
+.tabla-panel { width: 100%; border-collapse: collapse; text-align: left; }
+.tabla-panel th, .tabla-panel td { padding: 12px; border-bottom: 1px solid var(--arena); white-space: nowrap; vertical-align: middle; }
+.tabla-panel th { color: var(--tinta-suave); font-size: .76rem; text-transform: uppercase; letter-spacing: .04em; }
+.tabla-panel td { font-size: .84rem; font-weight: 400; line-height: 1.45; }
+.tabla-catalogo-admin { table-layout: fixed; }
+.tabla-catalogo-admin th:nth-child(1) { width: 24%; }
+.tabla-catalogo-admin th:nth-child(2) { width: 22%; }
+.tabla-catalogo-admin th:nth-child(3), .tabla-catalogo-admin th:nth-child(4) { width: 14%; }
+.tabla-catalogo-admin th:nth-child(5) { width: 7%; }
+.tabla-catalogo-admin th:nth-child(6) { width: 10%; }
+.tabla-catalogo-admin th:nth-child(7) { width: 9%; }
+.tabla-catalogo-admin th, .tabla-catalogo-admin td { padding: 12px 10px; white-space: normal; overflow-wrap: anywhere; }
+.admin-producto-nombre { display: flex; align-items: center; gap: 10px; font-weight: 400; }
+.admin-producto-nombre img { width: 46px; height: 46px; border-radius: 8px; object-fit: cover; background: var(--crema); }
+.admin-producto-nombre span { min-width: 0; font-weight: 400; line-height: 1.45; }
+.tabla-catalogo-admin tbody tr:hover { background: #FCFAF6; }
+.tabla-catalogo-admin td:nth-child(3),
+.tabla-catalogo-admin td:nth-child(4),
+.tabla-catalogo-admin td:nth-child(5),
+.tabla-catalogo-admin td:nth-child(6) { font-variant-numeric: tabular-nums; }
+.tabla-catalogo-admin td:last-child { text-align: center; }
+.tabla-vacia { color: var(--tinta-suave); text-align: center; }
+.boton-chico { padding: 7px 14px; font-size: .78rem; }
+.boton-editar-producto { display: inline-flex; min-width: 76px; min-height: 34px; align-items: center; justify-content: center; padding: 6px 14px; border-color: var(--dorado-claro); background: var(--superficie); color: var(--tinta); font-size: .76rem; font-weight: 500; line-height: 1; white-space: nowrap; }
+.boton-editar-producto:hover { border-color: var(--dorado); background: var(--dorado); color: #fff; }
+
+@media (max-width: 700px) {
+  .admin-productos-cabecera { align-items: flex-start; flex-direction: column; }
+  .admin-form-grid { grid-template-columns: 1fr; }
+  .admin-campo-ancho { grid-column: auto; }
+  .admin-form-producto, .admin-tabla-productos { padding: 15px; }
+}
+.admin-resenas { margin-top: 40px; }
+.admin-resenas > h2 { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.admin-resenas > h2 span { color: var(--tinta-suave); font: 500 .85rem var(--fuente-principal); }
+.admin-resena { margin-top: 14px; padding: 20px; border: 1px solid var(--arena); border-radius: var(--radio-borde); background: var(--superficie); box-shadow: var(--sombra-suave); }
+.admin-resena-cabecera { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--arena); }
+.admin-resena-cabecera a { font-weight: 600; text-decoration: none; }
+.admin-resena-cabecera a:hover { color: var(--dorado); }
+.admin-resena-cabecera span { color: var(--tinta-suave); font-size: .8rem; text-align: right; }
+.admin-resena blockquote { margin-top: 14px; padding: 12px 15px; border-left: 3px solid var(--dorado-claro); border-radius: 0 9px 9px 0; background: var(--crema); font-size: .9rem; line-height: 1.65; overflow-wrap: anywhere; }
+.admin-resena .formulario-respuesta { display: grid; gap: 9px; margin: 16px 0 0; padding: 16px; border: 1px solid var(--arena); border-radius: 11px; background: #fff; }
+.admin-resena .formulario-respuesta label { color: var(--tinta); font-size: .82rem; font-weight: 600; }
+.admin-resena .formulario-respuesta textarea { width: 100%; min-height: 88px; padding: 11px 13px; border: 1px solid var(--arena); border-radius: 9px; background: #fff; color: var(--tinta); font: 400 .87rem/1.55 var(--fuente-principal); resize: vertical; }
+.admin-resena .formulario-respuesta textarea:focus { outline: 2px solid var(--dorado); outline-offset: 2px; }
+.admin-resena .formulario-respuesta .boton-negro { justify-self: start; padding: 9px 18px; font-size: .8rem; }
+.admin-estado-pedido { display: flex; align-items: center; gap: 8px; }
+.admin-estado-pedido select { max-width: 190px; padding: 7px 9px; border: 1px solid var(--arena); border-radius: 8px; background: #fff; font: inherit; font-size: .78rem; }
+.admin-seguimiento-pedidos { margin-top: 30px; }
+.admin-accesos { margin-bottom: 18px; }
+.admin-temporadas { scroll-margin-top: 24px; }
+.admin-temporadas-cabecera { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+.admin-temporadas-cabecera p, .admin-temporada-campos label span { color: var(--tinta-suave); font-size: .82rem; }
+.admin-temporada-form { padding: 18px; border: 1px solid var(--arena); border-radius: 12px; background: var(--crema); }
+.admin-temporada-campos { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; }
+.admin-temporada-campos label { display: flex; flex-direction: column; gap: 6px; font-size: .84rem; font-weight: 600; }
+.admin-temporada-campos input, .admin-temporada-campos textarea { width: 100%; padding: 10px 12px; border: 1px solid var(--arena); border-radius: 9px; background: #fff; color: var(--tinta); font: inherit; font-weight: 400; }
+.admin-temporada-campos textarea { resize: vertical; }
+.admin-temporada-descripcion { grid-column: 1 / -1; }
+.admin-temporada-productos { margin-top: 18px; padding: 0; border: 0; }
+.admin-temporada-productos legend { margin-bottom: 9px; font-weight: 600; }
+.admin-temporada-productos legend small { color: var(--tinta-suave); font-weight: 400; }
+.admin-temporada-lista { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 14px; max-height: 250px; overflow: auto; padding: 12px; border: 1px solid var(--arena); border-radius: 10px; background: #fff; }
+.admin-temporada-lista label, .admin-temporada-activa { display: flex; align-items: center; gap: 8px; font-size: .82rem; font-weight: 400; }
+.admin-temporada-lista input, .admin-temporada-activa input { accent-color: var(--dorado); }
+.admin-temporada-activa { margin-top: 14px; }
+.admin-temporadas .tabla-contenedor { margin-top: 20px; }
+
+@media (max-width: 600px) {
+  .admin-resena-cabecera { align-items: flex-start; flex-direction: column; }
+  .admin-resena-cabecera span { text-align: left; }
+  .admin-resenas > h2 { align-items: flex-start; flex-direction: column; }
+  .admin-estado-pedido { align-items: flex-start; flex-direction: column; }
+  .admin-temporada-campos, .admin-temporada-lista { grid-template-columns: 1fr; }
+  .admin-temporada-descripcion { grid-column: auto; }
+}
+
+@media (max-width: 900px) {
+  .tabla-catalogo-admin { min-width: 760px; }
+}

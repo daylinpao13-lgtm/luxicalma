@@ -1,0 +1,89 @@
+.caja-formulario {
+  max-width: 420px;
+  margin: 50px auto;
+  background-color: var(--blanco-calido);
+  padding: 30px;
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra-suave);
+}
+
+.caja-formulario h1 {
+  text-align: center;
+  color: var(--azul-profundo);
+  margin-bottom: 20px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formulario label {
+  font-weight: 600;
+  margin-top: 10px;
+  color: var(--cafe-suave);
+}
+
+.formulario input,
+.formulario select {
+  padding: 10px 14px;
+  border-radius: var(--radio-borde);
+  border: 1px solid var(--lavanda);
+  font-family: var(--fuente-principal);
+}
+
+.campo-contrasena {
+  position: relative;
+}
+
+.campo-contrasena input {
+  width: 100%;
+  padding-right: 44px;
+}
+
+.boton-ver-clave {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: none;
+  border: none;
+  color: var(--cafe-suave);
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.boton-ver-clave:hover {
+  color: var(--azul-profundo);
+}
+
+.boton-ver-clave svg {
+  width: 20px;
+  height: 20px;
+}
+
+.formulario > button {
+  margin-top: 20px;
+}
+
+.enlace-secundario {
+  text-align: center;
+  margin-top: 16px;
+  color: var(--cafe-suave);
+}
+
+.enlace-secundario a {
+  color: var(--azul-profundo);
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .caja-formulario { margin: 20px 12px; padding: 20px; }
+}

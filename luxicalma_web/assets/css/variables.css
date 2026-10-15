@@ -1,0 +1,176 @@
+/* ==============================================================
+   variables.css  (estilos base de todo el sitio)
+   Paleta cálida para una tienda de velas: crema, dorado y tinta
+   oscura. Se mantiene el azul claro de la marca como acento.
+   Si un color cambia, se edita SOLO aquí.
+   Los nombres antiguos (--azul-profundo, --lavanda, etc.) se
+   conservan como alias para que login/registro sigan funcionando.
+   ============================================================== */
+
+:root {
+  /* Colores nuevos */
+  --fondo: #FBF7F0;          /* fondo general, cálido como luz de vela */
+  --superficie: #FFFFFF;     /* tarjetas */
+  --tinta: #2A2420;          /* texto y botones principales */
+  --tinta-suave: #6B5F55;    /* texto secundario */
+  --dorado: #B8912F;         /* detalles premium, ofertas */
+  --dorado-claro: #E9D3A0;
+  --crema: #F5EBDD;
+  --arena: #EFE4D2;          /* bordes y fondos suaves */
+  --azul-claro: #7EC8E3;     /* acento de marca */
+  --azul-claro-hover: #4FA3C1;
+  --exito-fondo: #E6F2E8;
+  --exito-texto: #2F6B3E;
+  --error-fondo: #F8DDD7;
+  --error-texto: #9B2C1F;
+  --aviso-fondo: #FFF4D6;
+
+  /* Alias de los nombres antiguos (no borrar) */
+  --azul-cielo: var(--fondo);
+  --lavanda: var(--arena);
+  --amarillo: var(--aviso-fondo);
+  --rosa: var(--error-fondo);
+  --menta: var(--exito-fondo);
+  --blanco-calido: var(--superficie);
+  --azul-profundo: var(--tinta);
+  --cafe-suave: var(--tinta-suave);
+  --negro: var(--tinta);
+  --blanco: #FFFFFF;
+
+  --fuente-principal: 'Poppins', 'Segoe UI', sans-serif;
+  --fuente-titulos: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --radio-borde: 14px;
+  --sombra-suave: 0 4px 16px rgba(60, 40, 20, 0.08);
+  --sombra-elevada: 0 10px 30px rgba(60, 40, 20, 0.16);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--fuente-principal);
+  background-color: var(--fondo);
+  color: var(--tinta);
+  line-height: 1.55;
+}
+
+body.sin-scroll { overflow: hidden; }
+
+h1, h2, h3 { font-family: var(--fuente-titulos); font-weight: 600; line-height: 1.15; }
+h1 { font-size: 2.4rem; }
+h2 { font-size: 1.8rem; }
+a { color: inherit; }
+img { max-width: 100%; }
+
+.contenedor { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* ---------- Botones ---------- */
+.boton-negro, .boton-claro {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 12px 26px;
+  font-family: var(--fuente-principal);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .15s ease;
+}
+.boton-negro { background-color: var(--tinta); color: var(--crema); border: 1px solid var(--tinta); }
+.boton-negro:hover { background-color: var(--dorado); border-color: var(--dorado); color: #fff; }
+.boton-claro { background-color: transparent; color: var(--tinta); border: 1px solid var(--tinta); }
+.boton-claro:hover { background-color: var(--tinta); color: var(--crema); }
+.boton-negro:active, .boton-claro:active { transform: scale(.98); }
+.boton-negro:disabled { opacity: .6; cursor: default; }
+.boton-ancho { display: block; width: 100%; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--dorado); outline-offset: 2px;
+}
+
+/* ---------- Mensajes ---------- */
+.mensaje-error, .mensaje-exito, .mensaje-aviso {
+  padding: 12px 16px; border-radius: var(--radio-borde); margin-bottom: 16px; font-size: .92rem;
+}
+.mensaje-error { background: var(--error-fondo); color: var(--error-texto); }
+.mensaje-exito { background: var(--exito-fondo); color: var(--exito-texto); }
+.mensaje-exito a { font-weight: 600; }
+.mensaje-aviso { background: var(--aviso-fondo); color: #7A5B12; }
+
+/* ---------- Insignias y precios ---------- */
+.insignia {
+  position: absolute; top: 10px; left: 10px; padding: 4px 12px; border-radius: 999px;
+  font-size: .7rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase;
+}
+.insignia-oferta { background: var(--dorado); color: #fff; }
+.insignia-agotado { background: var(--tinta); color: var(--crema); }
+.insignia-personal { background: var(--superficie); color: var(--tinta); border: 1px solid var(--dorado-claro); }
+
+.precio { font-weight: 600; color: var(--tinta); }
+.precio-anterior { text-decoration: line-through; color: var(--tinta-suave); font-weight: 400; margin-right: 8px; font-size: .9em; }
+.etiqueta { display: block; font-size: .7rem; font-weight: 400; color: var(--tinta-suave); }
+
+/* ---------- Selector de cantidad (carrito y ficha) ---------- */
+.selector-cantidad { display: inline-flex; align-items: center; border: 1px solid var(--arena); border-radius: 999px; background: #fff; overflow: hidden; }
+.selector-cantidad button {
+  width: 38px; height: 38px; border: 0; background: transparent; font-size: 1.15rem; cursor: pointer; color: var(--tinta);
+}
+.selector-cantidad button:hover:not(:disabled) { background: var(--crema); }
+.selector-cantidad button:disabled { opacity: .35; cursor: default; }
+.selector-cantidad input, .selector-cantidad .cantidad-actual {
+  width: 46px; text-align: center; border: 0; font: inherit; font-weight: 600; background: transparent; -moz-appearance: textfield;
+}
+.selector-cantidad input::-webkit-outer-spin-button, .selector-cantidad input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
+/* ---------- Grid y tarjetas de producto (inicio, catálogo, relacionados) ---------- */
+.grid-productos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+
+.tarjeta-producto {
+  background: var(--superficie); border-radius: var(--radio-borde); box-shadow: var(--sombra-suave);
+  overflow: hidden; display: flex; flex-direction: column;
+  transition: transform .25s ease, box-shadow .25s ease; cursor: pointer;
+}
+.tarjeta-producto:hover { transform: translateY(-4px); box-shadow: var(--sombra-elevada); }
+
+.tarjeta-producto:focus-visible { outline: 2px solid var(--dorado); outline-offset: 3px; }
+.tarjeta-galeria { position: relative; }
+.tarjeta-imagen { position: relative; display: block; aspect-ratio: 1 / 1; background: var(--crema); overflow: hidden; }
+.tarjeta-imagen > img, .galeria-diapositiva img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.galeria-pista { display: flex; width: 100%; height: 100%; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
+.galeria-pista::-webkit-scrollbar { display: none; }
+.galeria-diapositiva { flex: 0 0 100%; min-width: 0; height: 100%; scroll-snap-align: start; }
+.tarjeta-producto:hover .tarjeta-imagen img { transform: scale(1.05); }
+
+.tarjeta-cuerpo { padding: 16px; display: flex; flex-direction: column; gap: 6px; flex: 1; text-align: center; }
+.tarjeta-cuerpo h3 { font-size: 1.3rem; }
+.tarjeta-producto:hover .tarjeta-cuerpo h3 { color: var(--dorado); }
+.tarjeta-descripcion { display: -webkit-box; overflow: hidden; color: var(--tinta-suave); font-size: .8rem; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+.tarjeta-detalles { font-size: .78rem; color: var(--tinta-suave); display: flex; flex-direction: column; gap: 2px; }
+.tarjeta-cuerpo .precio { font-size: 1.05rem; margin: 4px 0 0; }
+.tarjeta-ver-producto { margin-top: 4px; font-size: .8rem; padding: 8px 14px; }
+
+.galeria-flecha { position: absolute; z-index: 2; top: 50%; display: grid; place-items: center; width: 34px; height: 34px; padding: 0 0 3px; border: 1px solid rgba(42,36,32,.12); border-radius: 50%; background: rgba(255,255,255,.92); color: var(--tinta); box-shadow: var(--sombra-suave); font: inherit; font-size: 1.65rem; line-height: 1; cursor: pointer; transform: translateY(-50%); }
+.galeria-flecha:hover { background: var(--superficie); color: var(--dorado); }
+.galeria-flecha:focus-visible, .galeria-punto:focus-visible, .galeria-miniatura:focus-visible { outline: 2px solid var(--dorado); outline-offset: 2px; }
+.galeria-anterior { left: 10px; }
+.galeria-siguiente { right: 10px; }
+.galeria-indicadores { position: absolute; z-index: 2; bottom: 10px; left: 50%; display: flex; gap: 6px; padding: 6px 9px; border-radius: 999px; background: rgba(255,255,255,.86); transform: translateX(-50%); }
+.galeria-punto { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; background: var(--arena); cursor: pointer; }
+.galeria-punto.activo { background: var(--dorado); }
+.galeria-miniaturas { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 6px; padding: 6px; background: var(--superficie); }
+.galeria-miniatura { min-width: 0; aspect-ratio: 1 / .72; padding: 2px; border: 1px solid var(--arena); border-radius: 8px; overflow: hidden; background: var(--crema); cursor: pointer; }
+.galeria-miniatura.activa { border-color: var(--dorado); box-shadow: 0 0 0 1px var(--dorado); }
+.galeria-miniatura img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+@media (max-width: 1000px) { .grid-productos { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 720px)  { .grid-productos { grid-template-columns: repeat(2, 1fr); gap: 14px; } h1 { font-size: 2rem; } }
+@media (max-width: 380px)  { .grid-productos { grid-template-columns: 1fr; } }
+
+/* ---------- Avisos flotantes (toast) ---------- */
+.toast-contenedor { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 400; display: flex; flex-direction: column; gap: 8px; align-items: center; width: max-content; max-width: 92vw; }
+.toast {
+  background: var(--tinta); color: var(--crema); padding: 12px 22px; border-radius: 999px; font-size: .88rem;
+  box-shadow: var(--sombra-elevada); opacity: 0; transform: translateY(12px); transition: opacity .25s ease, transform .25s ease;
+}
+.toast.visible { opacity: 1; transform: none; }
+.toast-error { background: var(--error-texto); color: #fff; }

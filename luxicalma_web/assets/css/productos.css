@@ -1,0 +1,9 @@
+.seccion-catalogo { padding: 36px 20px 10px; }
+.seccion-catalogo h1 { margin-bottom: 6px; }
+.nota-filtro { color: var(--tinta-suave); font-size: .88rem; margin-bottom: 8px; }
+.conteo-resultados { color: var(--tinta-suave); font-size: .85rem; margin-bottom: 22px; }
+
+.sin-resultados { grid-column: 1 / -1; text-align: center; padding: 60px 20px; background: var(--crema); border-radius: var(--radio-borde); }
+.icono-sin-resultados { font-family: Arial, sans-serif; font-size: 3rem; margin-bottom: 8px; color: var(--dorado); }
+.sin-resultados h2 { margin-bottom: 8px; }
+.sin-resultados p { margin-bottom: 22px; color: var(--tinta-suave); }
